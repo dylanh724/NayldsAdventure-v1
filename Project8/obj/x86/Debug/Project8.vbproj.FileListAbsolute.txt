@@ -1,0 +1,61 @@
+C:\Users\open\Desktop\Project8\Project8\bin\Debug\Project8.exe
+C:\Users\open\Desktop\Project8\Project8\bin\Debug\Project8.pdb
+C:\Users\open\Desktop\Project8\Project8\bin\Debug\Project8.xml
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\Project8.Resources.resources
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\Project8.exe
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\Project8.xml
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\Project8.pdb
+C:\Users\open\Desktop\Project8\Project8\obj\x86\Debug\Project8.GameNameForm.resources
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\Project8.exe
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\Project8.xml
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\Project8.pdb
+C:\Users\open\Downloads\Project8\Project8\bin\Debug\Project8.exe
+C:\Users\open\Downloads\Project8\Project8\bin\Debug\Project8.pdb
+C:\Users\open\Downloads\Project8\Project8\bin\Debug\Project8.xml
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\Project8.GameNameForm.resources
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\Project8.Resources.resources
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\open\Downloads\Project8\Project8\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project8.NalydsAdventureForm.resources
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project8.Resources.resources
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Dylan\Desktop\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.exe.manifest
+C:\Users\Dylan\Desktop\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.application
+C:\Users\Dylan\Desktop\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.exe
+C:\Users\Dylan\Desktop\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.pdb
+C:\Users\Dylan\Desktop\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.xml
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.exe.manifest
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.application
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.exe
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.xml
+C:\Users\Dylan\Desktop\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.pdb
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.exe
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.xml
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.pdb
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.exe.manifest
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.application
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.exe
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.pdb
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.xml
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project8.NalydsAdventureForm.resources
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project8.Resources.resources
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.exe.manifest
+I:\Google Drive v2\Google Drive\College\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.application
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.exe
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.xml
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project 8 - Nalyd`s Adventure.pdb
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.exe
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project8.NalydsAdventureForm.resources
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project8.Resources.resources
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\obj\x86\Debug\Project8.vbproj.GenerateResource.Cache
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.pdb
+E:\#Shared\MEGA\College (G)\#ITS228 (VB) - Fall 2012\#Old VB\Project8\Project8\bin\Debug\Project 8 - Nalyd`s Adventure.xml

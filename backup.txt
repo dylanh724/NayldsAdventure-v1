@@ -1,0 +1,372 @@
+Public Class GameNameForm
+    'Public declarations for use within multiple functions/subs
+    Dim RoomNameArray() As String = {"Damp Field", "River", "Outside Cavern", "Cavern Entrace"}
+    Dim RoomDescriptionArray() As String =
+        {
+            "You awaken in a damp patch of tall grass, muddled as to why you are here." + vbCrLf + "You feel dizzy.",
+            "You come across a rushing river. There is a sweet aroma within the mist of the humid air."
+        }
+    Dim LookAroundArray() As String = {Room0(), Room1()}
+    Dim InventoryArray() As String = {"(Empty Slot)", "(Empty Slot)", "(Empty Slot)", "(Empty Slot)"}
+    Dim CurrentRoomInteger As Integer = 0
+    Dim NorthString As String
+    Dim SouthString As String
+    Dim EastString As String
+    Dim WestString As String
+    Dim UpString As String
+    Dim DownString As String
+    Dim InventoryString As String
+    Dim SpecialString As String
+    Dim GoldenKeyEventBoolean = False
+    Dim HaveGoldenKeyInteger = 0
+
+    'Room 0 (START - Damp Field)
+    Private Function Room0() As String
+        Dim NewLookString As String
+        NewLookString = "You faintly see a rock formation to the NORTH. The SOUTH and EAST are blocked off. To the WEST, you see a river."
+        Return NewLookString
+
+    End Function
+
+    'Room 1 (River)
+    Private Function Room1() As String
+        Dim NewLookString As String
+        NewLookString = "The intensity of the river blocks most of your paths to the NORTH and EAST. A formation of rock blocks the SOUTH." +
+            "You see a tall, grassy field to the WEST."
+        Return NewLookString
+
+    End Function
+
+    Private Sub ExitButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitButton.Click
+        'Exit - Yes/No?
+        Dim ResponseInteger As Integer
+        ResponseInteger = MessageBox.Show("Are you sure you want to quit? All game data will be lost!", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        If ResponseInteger = vbYes Then
+            Me.Close()
+        Else
+            'Select/focus
+            SubmitTextBox.Focus()
+            SubmitTextBox.SelectAll()
+
+        End If
+
+    End Sub
+
+    Private Sub HelpButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HelpButton.Click
+        'Display Help
+        GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "*******************************" + vbCrLf + vbCrLf + "HELP:" + vbCrLf +
+            "Click the directional buttons to navigate. Sometimes you won't be able to navigate certain directions" + vbCrLf +
+            "Click 'Current Location' to state again where you are" + vbCrLf +
+            "Click 'Look Around' to view detailed surounding information and possibly clues of where to go and where to look, or type 'look'" + vbCrLf +
+            "Review your inventory - sometimes you may require an item to move forward" + vbCrLf +
+            "Many commands are accepted:" + vbCrLf +
+            "'get' (Get Key)," + vbCrLf +
+            "'inv' for inventory," + vbCrLf +
+            "'inspect' (Inspect Writing)," + vbCrLf +
+            "'look' to look around," + vbCrLf +
+            "'loc' for current location," + vbCrLf +
+            "'u' up, 'd' down, 'n' north, 's' south, 'e' east, 'w' west" + vbCrLf + vbCrLf +
+            "*******************************" + vbCrLf
+
+        'Select/focus
+        SubmitTextBox.Focus()
+        SubmitTextBox.SelectAll()
+
+    End Sub
+
+    Private Sub GameNameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Empty inventory
+        For Each SingleInventoryString In InventoryArray
+            InventoryListBox.Items.Add(SingleInventoryString)
+        Next
+
+
+        'Intro text
+        GameLogTextBox.Text = "Welcome to Game Name Here! Click 'Help' on the right if stuck." + vbCrLf + vbCrLf +
+            "*******************************" + vbCrLf + vbCrLf
+
+        'Display current room (0)
+        CurrentRoomLabel.Text = RoomNameArray(CurrentRoomInteger)
+
+        'Display current location text
+        GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + RoomDescriptionArray(CurrentRoomInteger) + vbCrLf
+
+        'Display chat
+        GameLogTextBox.Text = GameLogTextBox.Text
+
+        'Select/focus
+        SubmitTextBox.Focus()
+        SubmitTextBox.SelectAll()
+
+    End Sub
+
+    Private Sub LookButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LookAroundButton.Click
+        'Look around - display #1
+        GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You look around.."
+
+        '**BUGGED - Why does it include the above look around statement in sleep?!
+        'Wait 0.5s 
+        'Threading.Thread.Sleep(500)
+        'Me.Update()
+
+        'Look around - display #2
+        GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + LookAroundArray(CurrentRoomInteger) + vbCrLf
+
+        'Select/focus
+        SubmitTextBox.Focus()
+        SubmitTextBox.SelectAll()
+
+    End Sub
+
+    Private Sub SubmitButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SubmitButton.Click
+        Dim SubmitString As String = SubmitTextBox.Text
+
+        'Basic Commands
+        Select Case SubmitString.ToUpper
+            Case "NORTH"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go NORTH.."
+                NorthButton.PerformClick()
+            Case "N"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go NORTH.."
+                NorthButton.PerformClick()
+            Case "SOUTH"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go SOUTH.."
+                SouthButton.PerformClick()
+            Case "S"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go SOUTH.."
+                SouthButton.PerformClick()
+            Case "EAST"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go EAST.."
+                EastButton.PerformClick()
+            Case "E"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go EAST.."
+                EastButton.PerformClick()
+            Case "WEST"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go WEST.."
+                WestButton.PerformClick()
+            Case "W"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go WEST.."
+                WestButton.PerformClick()
+            Case "UP"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go UP.."
+                UpButton.PerformClick()
+            Case "U"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go UP.."
+                UpButton.PerformClick()
+            Case "DOWN"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go DOWN.."
+                DownButton.PerformClick()
+            Case "D"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Go DOWN.."
+                DownButton.PerformClick()
+            Case "HELP"
+                HelpButton.PerformClick()
+            Case "EXIT"
+                ExitButton.PerformClick()
+            Case "QUIT"
+                ExitButton.PerformClick()
+            Case "GET " + "\*"
+                GameLogTextBox.Text = "test"
+            Case "LOC"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Current Location.." + vbCrLf
+                CurrentLocationButton.PerformClick()
+            Case "LOCATION"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Current Location.." + vbCrLf
+                CurrentLocationButton.PerformClick()
+            Case "CURRENT LOCATION"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Current Location.." + vbCrLf
+                CurrentLocationButton.PerformClick()
+            Case "CURRENT LOC"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Current Location.." + vbCrLf
+                CurrentLocationButton.PerformClick()
+            Case "LOOK"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Look Around.." + vbCrLf
+                LookAroundButton.PerformClick()
+            Case "LOOK AROUND"
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + "Look Around.." + vbCrLf
+                LookAroundButton.PerformClick()
+            Case Else
+                'Display text with dots after it if it's unrecognized
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + vbCrLf + SubmitString + ".." + vbCrLf + "Invalid Command - Type HELP for assistance."
+
+        End Select
+
+        'Determine specific room commands
+        Select Case CurrentRoomInteger
+            Case 0
+                ' NULL
+            Case 1
+                'Get Key Enabled?
+                If GoldenKeyEventBoolean = True Then
+                    If SubmitString.ToUpper = "GET KEY" Or SubmitString.ToUpper = "GET GOLDEN KEY" Then
+                        'Add Golden Key to inventory
+                        InventoryListBox.Items.Add("Golden Key")
+                        'Make sure you can't get key again
+                        GoldenKeyEventBoolean = False
+                        HaveGoldenKeyInteger = 1
+                    End If
+                End If
+            Case 2
+                'NULL
+            Case 3
+                'NULL
+            Case 4
+                'NULL
+        End Select
+
+        'Select/focus
+        SubmitTextBox.Focus()
+        SubmitTextBox.Clear()
+
+    End Sub
+
+    Private Sub CurrentLocationButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CurrentLocationButton.Click
+        'Display location
+        GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + RoomDescriptionArray(CurrentRoomInteger) + vbCrLf
+
+        'Focus/select
+        SubmitTextBox.Focus()
+        SubmitTextBox.SelectAll()
+
+    End Sub
+
+    Private Sub GameLogTextBox_focus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GameLogTextBox.GotFocus
+        'Focus/Select
+        SubmitTextBox.Focus()
+        SubmitTextBox.SelectAll()
+
+    End Sub
+
+    Private Sub EastButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EastButton.Click
+        Select Case CurrentRoomInteger
+            Case 0
+                'Room 0 >> Room 1
+                CurrentRoomInteger = 1
+                'Update the room name display
+                CurrentRoomLabel.Text = RoomNameArray(CurrentRoomInteger)
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + RoomDescriptionArray(CurrentRoomInteger) + vbCrLf
+            Case 1
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go EAST." + vbCrLf
+            Case 2
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go EAST." + vbCrLf
+            Case 3
+                'NULL
+            Case 4
+                'NULL
+        End Select
+    End Sub
+
+    Private Sub UpButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpButton.Click
+        'Determine where you can go, depending on which room.
+        Select Case CurrentRoomInteger
+            Case 0
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go UP." + vbCrLf
+            Case 1
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go UP." + vbCrLf
+            Case 2
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go UP." + vbCrLf
+            Case 3
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go UP." + vbCrLf
+            Case 4
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go UP." + vbCrLf
+        End Select
+
+    End Sub
+
+    Private Sub WestButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WestButton.Click
+        'Determine where you can go, depending on which room.
+        Select Case CurrentRoomInteger
+            Case 0
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go WEST." + vbCrLf
+            Case 1
+                'Room 1 (River) >> Room 0 (START)
+            Case 2
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go WEST." + vbCrLf
+            Case 3
+                'NULL
+            Case 4
+                'NULL
+        End Select
+
+    End Sub
+
+    Private Sub SouthButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SouthButton.Click
+        'Determine where you can go, depending on which room.
+        Select Case CurrentRoomInteger
+            Case 0
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go SOUTH." + vbCrLf
+            Case 1
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go SOUTH." + vbCrLf
+            Case 2
+                'Room 2 (Outside Cave) >> Room 0 (START)
+            Case 3
+                'NULL
+            Case 4
+                'NULL
+        End Select
+
+    End Sub
+
+    Private Sub NorthButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NorthButton.Click
+        'Determine where you can go, depending on which room.
+        Select Case CurrentRoomInteger
+            Case 0
+                'Room 1 >> Room 2 (Outside Cave)
+                GameLogTextBox.Text = GameLogTextBox.Text + "Pending NORTH room :)"
+            Case 1
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go NORTH." + vbCrLf
+            Case 3
+                'NULL
+            Case 4
+                'NULL
+        End Select
+
+    End Sub
+
+    Private Sub DownButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DownButton.Click
+        'Determine where you can go, depending on which room.
+        Select Case CurrentRoomInteger
+            Case 0
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go DOWN." + vbCrLf
+                'Disable user to get the golden key if user just left room 1 (river)
+                GoldenKeyEventBoolean = False
+
+            Case 1
+                'Should golden key event trigger?
+                If HaveGoldenKeyInteger = 0 Then
+                    GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You look closer at the reflective glare.." + vbCrLf +
+                        "You see a golden KEY within reach." + vbCrLf
+                    'Enable user to get the golden key
+                    GoldenKeyEventBoolean = True
+                Else
+                    GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go down."
+                End If
+            Case 2
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go DOWN." + vbCrLf
+            Case 3
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go DOWN." + vbCrLf
+            Case 4
+                'BLOCKED DIRECTION
+                GameLogTextBox.Text = GameLogTextBox.Text + vbCrLf + "You cannot go DOWN." + vbCrLf
+        End Select
+
+    End Sub
+
+    Private Sub MapButton_Click(sender As System.Object, e As System.EventArgs) Handles MapButton.Click
+        MessageBox.Show("TEST")
+    End Sub
+End Class
